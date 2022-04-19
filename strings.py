@@ -12,14 +12,20 @@ Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 import pytest
 
 def no_duplicates(a_string):
+    result = "".join(dict.fromkeys(a_string))
     pass
 
 
 def reversed_words(a_string):
+    result = a_string.split(" ")
+    result.reverse()
     pass
 
 
 def four_char_strings(a_string):
+    new_list = []
+    for i in range(0, len(a_string), 4):
+        new_list.append(a_string[i:i+4])
     pass
 
 

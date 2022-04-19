@@ -71,23 +71,39 @@ STATES_CAPITALS = {
 
 def capital_of_Idaho():
     # Your code here
+    print(STATES_CAPITALS['Idaho'])
     pass
 
 def all_states():
     # Your code here
+    for key,values in STATES_CAPITALS.items():
+        print(key)
     pass
 
 def all_capitals():
     # Your code here
+    for key,values in STATES_CAPITALS.items():
+        print(values)
     pass
 
 def states_capitals_string():
     # Your code here
+    check=sorted(STATES_CAPITALS)
+    string=" --> ".join(STATES_CAPITALS)
+    if string.isalpha() == False:
+        for i in string:
+            if i.isaplpha() == False and ((string != '-->') or (string !=' ')):
+                string.pop(i)
+            else:
+                continue
     pass
 
 
 
 def get_state(capital):
+    for key, value in STATES_CAPITALS.items():
+        if capital == value:
+            print(key)
     pass
 
 
