@@ -65,7 +65,7 @@ STATES_CAPITALS = {
     'Washington' : 'Olympia',
     'West Virginia' : 'Charleston',
     'Wisconsin' : 'Madison',
-    'Wyoming' : 'Cheyenne',
+    'Wyoming' : 'Cheyenne'
 }
 
 
@@ -92,19 +92,24 @@ def states_capitals_string():
     string=" --> ".join(STATES_CAPITALS)
     if string.isalpha() == False:
         for i in string:
-            if i.isaplpha() == False and ((string != '-->') or (string !=' ')):
-                string.pop(i)
+            if i.isalpha() is False and ((string != '-->') or (string != ' ')):
+                string.replace(i, '')
             else:
                 continue
+    return string
     pass
 
 
 
 def get_state(capital):
-    for key, value in STATES_CAPITALS.items():
-        if capital == value:
-            print(key)
-    pass
+
+    try:
+        for key, value in STATES_CAPITALS.items():
+            if capital == value:
+                return key
+    except KeyError:
+        print("There is no such a capital in the database")
+
 
 
 
