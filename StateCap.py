@@ -65,30 +65,51 @@ STATES_CAPITALS = {
     'Washington' : 'Olympia',
     'West Virginia' : 'Charleston',
     'Wisconsin' : 'Madison',
-    'Wyoming' : 'Cheyenne',
+    'Wyoming' : 'Cheyenne'
 }
 
 
 def capital_of_Idaho():
     # Your code here
+    print(STATES_CAPITALS['Idaho'])
     pass
 
 def all_states():
     # Your code here
+    for key,values in STATES_CAPITALS.items():
+        print(key)
     pass
 
 def all_capitals():
     # Your code here
+    for key,values in STATES_CAPITALS.items():
+        print(values)
     pass
 
 def states_capitals_string():
     # Your code here
+    check=sorted(STATES_CAPITALS)
+    string=" --> ".join(STATES_CAPITALS)
+    if string.isalpha() == False:
+        for i in string:
+            if i.isalpha() is False and ((string != '-->') or (string != ' ')):
+                string.replace(i, '')
+            else:
+                continue
+    return string
     pass
 
 
 
 def get_state(capital):
-    pass
+
+    try:
+        for key, value in STATES_CAPITALS.items():
+            if capital == value:
+                return key
+    except KeyError:
+        print("There is no such a capital in the database")
+
 
 
 
